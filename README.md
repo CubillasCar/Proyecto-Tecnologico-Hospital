@@ -1,11 +1,11 @@
 # Proyecto-Tecnologico-Hospital
 
-## Profesor: 
-###Marco Aurelio Espinoza Rivera
+## Profesor: </br>
+Marco Aurelio Espinoza Rivera
 
-## Integrantes:
-### CUBILLAS OLANO CARLOS EDUARDO
-### HUERTA RONDAN GUILLERMO ENRIQUE
-### VERELLEN VALDEZ DOMINIQUE CONSTANT
+## Integrantes:</br>
+CUBILLAS OLANO CARLOS EDUARDO</br>
+HUERTA RONDAN GUILLERMO ENRIQUE</br>
+VERELLEN VALDEZ DOMINIQUE CONSTANT
 
 ![](Docs/bd.png)
