@@ -27,6 +27,10 @@ import { MedicoDialogoComponent } from './pages/medico/medico-dialogo/medico-dia
 import { PacienteEdicionComponent } from './pages/paciente/paciente-edicion/paciente-edicion.component';
 import { PacienteComponent } from './pages/paciente/paciente.component';
 
+// especialidad
+import { EspecialidadEdicionComponent } from './pages/especialidad/especialidad-edicion/especialidad-edicion.component';
+import { EspecialidadComponent } from './pages/especialidad/especialidad.component';
+
 export function tokenGetter() {
   return sessionStorage.getItem(environment.TOKEN_NAME);
 }
@@ -35,6 +39,8 @@ export function tokenGetter() {
   declarations: [
     AppComponent,
     PacienteComponent,
+    EspecialidadComponent,
+    EspecialidadEdicionComponent,
     MedicoComponent,
     PacienteEdicionComponent,
     MedicoDialogoComponent,
