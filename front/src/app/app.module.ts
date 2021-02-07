@@ -31,6 +31,10 @@ import { PacienteComponent } from './pages/paciente/paciente.component';
 import { EspecialidadEdicionComponent } from './pages/especialidad/especialidad-edicion/especialidad-edicion.component';
 import { EspecialidadComponent } from './pages/especialidad/especialidad.component';
 
+// examen
+import { ExamenComponent } from './pages/examen/examen.component';
+import { ExamenEdicionComponent } from './pages/examen/examen-edicion/examen-edicion.component';
+
 export function tokenGetter() {
   return sessionStorage.getItem(environment.TOKEN_NAME);
 }
@@ -39,6 +43,8 @@ export function tokenGetter() {
   declarations: [
     AppComponent,
     PacienteComponent,
+	ExamenComponent,    
+    ExamenEdicionComponent,
     EspecialidadComponent,
     EspecialidadEdicionComponent,
     MedicoComponent,
