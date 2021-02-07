@@ -12,12 +12,20 @@ import { RecuperarComponent } from './pages/login/recuperar/recuperar.component'
 import { TokenComponent } from './pages/login/recuperar/token/token.component';
 import { EspecialidadComponent } from './pages/especialidad/especialidad.component';
 import { EspecialidadEdicionComponent } from './pages/especialidad/especialidad-edicion/especialidad-edicion.component';
+import { ExamenComponent } from './pages/examen/examen.component';
+import { ExamenEdicionComponent } from './pages/examen/examen-edicion/examen-edicion.component';
 
 const routes: Routes = [
   {
     path: 'paciente', component: PacienteComponent, children: [
       { path: 'nuevo', component: PacienteEdicionComponent },
       { path: 'edicion/:id', component: PacienteEdicionComponent }
+    ], canActivate: [GuardService]
+  },
+    {
+    path: 'examen', component: ExamenComponent, children: [
+      { path: 'nuevo', component: ExamenEdicionComponent },
+      { path: 'edicion/:id', component: ExamenEdicionComponent }
     ], canActivate: [GuardService]
   },
   {
