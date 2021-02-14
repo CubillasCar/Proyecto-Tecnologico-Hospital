@@ -32,9 +32,9 @@ INSERT INTO usuario_rol (id_usuario, id_rol) VALUES (3, 2);
 
 
 --INSERT INTO menu(id_menu, nombre, icono, url) VALUES (1, 'Buscar', 'search', '/buscar');
---INSERT INTO menu(id_menu, nombre, icono, url) VALUES (2, 'Registrar', 'insert_drive_file', '/consulta');
---INSERT INTO menu(id_menu, nombre, icono, url) VALUES (3, 'Registrar E.', 'insert_drive_file', '/consulta-especial');
---INSERT INTO menu(id_menu, nombre, icono, url) VALUES (4, 'Registrar W.', 'view_carousel', '/consulta-wizard');
+INSERT INTO menu(id_menu, nombre, icono, url) VALUES (2, 'Registrar', 'insert_drive_file', '/consulta');
+INSERT INTO menu(id_menu, nombre, icono, url) VALUES (3, 'Registrar E.', 'insert_drive_file', '/consulta-especial');
+INSERT INTO menu(id_menu, nombre, icono, url) VALUES (4, 'Registrar W.', 'view_carousel', '/consulta-wizard');
 INSERT INTO menu(id_menu, nombre, icono, url) VALUES (5, 'Especialiades', 'star_rate', '/especialidad');
 INSERT INTO menu(id_menu, nombre, icono, url) VALUES (6, 'Médicos', 'healing', '/medico');
 INSERT INTO menu(id_menu, nombre, icono, url) VALUES (7, 'Examenes', 'assignment', '/examen');
@@ -43,16 +43,16 @@ INSERT INTO menu(id_menu, nombre, icono, url) VALUES (8, 'Pacientes', 'accessibi
 
 
 --INSERT INTO menu_rol (id_menu, id_rol) VALUES (1, 1);
---INSERT INTO menu_rol (id_menu, id_rol) VALUES (2, 1);
---INSERT INTO menu_rol (id_menu, id_rol) VALUES (3, 1);
---INSERT INTO menu_rol (id_menu, id_rol) VALUES (4, 1);
+INSERT INTO menu_rol (id_menu, id_rol) VALUES (2, 1);
+INSERT INTO menu_rol (id_menu, id_rol) VALUES (3, 1);
+INSERT INTO menu_rol (id_menu, id_rol) VALUES (4, 1);
 INSERT INTO menu_rol (id_menu, id_rol) VALUES (5, 1);
 INSERT INTO menu_rol (id_menu, id_rol) VALUES (6, 1);
 INSERT INTO menu_rol (id_menu, id_rol) VALUES (7, 1);
 INSERT INTO menu_rol (id_menu, id_rol) VALUES (8, 1);
 --INSERT INTO menu_rol (id_menu, id_rol) VALUES (9, 1);
---INSERT INTO menu_rol (id_menu, id_rol) VALUES (3, 2);
---INSERT INTO menu_rol (id_menu, id_rol) VALUES (4, 2);
+INSERT INTO menu_rol (id_menu, id_rol) VALUES (3, 2);
+INSERT INTO menu_rol (id_menu, id_rol) VALUES (4, 2);
 INSERT INTO menu_rol (id_menu, id_rol) VALUES (5, 2);
 --INSERT INTO menu_rol (id_menu, id_rol) VALUES (6, 2);
 
