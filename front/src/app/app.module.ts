@@ -35,6 +35,11 @@ import { EspecialidadComponent } from './pages/especialidad/especialidad.compone
 import { ExamenComponent } from './pages/examen/examen.component';
 import { ExamenEdicionComponent } from './pages/examen/examen-edicion/examen-edicion.component';
 
+// consulta
+import { ConsultaComponent } from './pages/consulta/consulta.component';
+import { ConsultaEspecialComponent } from './pages/consulta-especial/consulta-especial.component';
+import { WizardComponent } from './pages/consulta/wizard/wizard.component';
+
 export function tokenGetter() {
   return sessionStorage.getItem(environment.TOKEN_NAME);
 }
@@ -48,6 +53,9 @@ export function tokenGetter() {
     EspecialidadComponent,
     EspecialidadEdicionComponent,
     MedicoComponent,
+	WizardComponent,
+	ConsultaComponent,
+    ConsultaEspecialComponent,
     PacienteEdicionComponent,
     MedicoDialogoComponent,
     LoginComponent,

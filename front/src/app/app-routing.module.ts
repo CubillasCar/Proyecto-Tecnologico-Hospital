@@ -15,6 +15,11 @@ import { EspecialidadEdicionComponent } from './pages/especialidad/especialidad-
 import { ExamenComponent } from './pages/examen/examen.component';
 import { ExamenEdicionComponent } from './pages/examen/examen-edicion/examen-edicion.component';
 
+import { ConsultaComponent } from './pages/consulta/consulta.component';
+import { ConsultaEspecialComponent } from './pages/consulta-especial/consulta-especial.component';
+import { WizardComponent } from './pages/consulta/wizard/wizard.component';
+
+
 const routes: Routes = [
   {
     path: 'paciente', component: PacienteComponent, children: [
@@ -41,6 +46,9 @@ const routes: Routes = [
       { path: ':token', component: TokenComponent }
     ]
   },
+  { path: 'consulta', component: ConsultaComponent, canActivate: [GuardService] },
+  { path: 'consulta-especial', component: ConsultaEspecialComponent, canActivate: [GuardService] },
+  { path: 'consulta-wizard', component: WizardComponent, canActivate: [GuardService] },
   { path: 'not-403', component: Not403Component },
   { path: 'not-404', component: Not404Component },
   { path: 'login', component: LoginComponent },
