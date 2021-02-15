@@ -1,5 +1,8 @@
 package com.gecomi.generic.service;
 
+import org.springframework.data.jpa.repository.Modifying;
+import org.springframework.data.jpa.repository.Query;
+
 import java.util.List;
 
 public interface ICRUD<T, ID> {

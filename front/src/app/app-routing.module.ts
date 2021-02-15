@@ -19,6 +19,8 @@ import { ConsultaComponent } from './pages/consulta/consulta.component';
 import { ConsultaEspecialComponent } from './pages/consulta-especial/consulta-especial.component';
 import { WizardComponent } from './pages/consulta/wizard/wizard.component';
 
+import { BuscarComponent } from './pages/buscar/buscar.component';
+import { ReporteComponent } from './pages/reporte/reporte.component';
 
 const routes: Routes = [
   {
@@ -46,6 +48,9 @@ const routes: Routes = [
       { path: ':token', component: TokenComponent }
     ]
   },
+
+  { path: 'buscar', component: BuscarComponent, canActivate: [GuardService] },
+  { path: 'reporte', component: ReporteComponent, canActivate: [GuardService] },
   { path: 'consulta', component: ConsultaComponent, canActivate: [GuardService] },
   { path: 'consulta-especial', component: ConsultaEspecialComponent, canActivate: [GuardService] },
   { path: 'consulta-wizard', component: WizardComponent, canActivate: [GuardService] },

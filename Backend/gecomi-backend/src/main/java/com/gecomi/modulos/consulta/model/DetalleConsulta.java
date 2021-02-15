@@ -12,9 +12,15 @@ import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.gecomi.modulos.consulta.model.Consulta;
+import org.hibernate.annotations.SQLDelete;
+import org.hibernate.annotations.Where;
+import org.hibernate.envers.Audited;
 
 @Entity
 @Table(name = "detalle_consulta")
+@Audited
+@Where(clause = "deleted = false")
+@SQLDelete(sql="update detalle_consulta set deleted=true where id_detalle = ?")
 public class DetalleConsulta {
 
 	@Id

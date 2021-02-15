@@ -40,6 +40,14 @@ import { ConsultaComponent } from './pages/consulta/consulta.component';
 import { ConsultaEspecialComponent } from './pages/consulta-especial/consulta-especial.component';
 import { WizardComponent } from './pages/consulta/wizard/wizard.component';
 
+// reportes
+import { ReporteComponent } from './pages/reporte/reporte.component';
+
+
+// buscar
+import { BuscarComponent } from './pages/buscar/buscar.component';
+import { BuscarDialogoComponent } from './pages/buscar/buscar-dialogo/buscar-dialogo.component';
+
 export function tokenGetter() {
   return sessionStorage.getItem(environment.TOKEN_NAME);
 }
@@ -48,13 +56,16 @@ export function tokenGetter() {
   declarations: [
     AppComponent,
     PacienteComponent,
-	ExamenComponent,    
+    ExamenComponent,
     ExamenEdicionComponent,
     EspecialidadComponent,
     EspecialidadEdicionComponent,
     MedicoComponent,
-	WizardComponent,
-	ConsultaComponent,
+    WizardComponent,
+    BuscarComponent,
+    BuscarDialogoComponent,
+    ReporteComponent,
+    ConsultaComponent,
     ConsultaEspecialComponent,
     PacienteEdicionComponent,
     MedicoDialogoComponent,
