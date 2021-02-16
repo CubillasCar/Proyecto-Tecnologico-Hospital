@@ -1,3 +1,6 @@
+import { ExamenRmComponent } from './pages/examen-rm/examen-rm.component';
+import { EspecialidadRmComponent } from './pages/especialidad-rm/especialidad-rm.component';
+import { MedicoRmComponent } from './pages/medico-rm/medico-rm.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { PacienteComponent } from './pages/paciente/paciente.component';
@@ -42,7 +45,15 @@ const routes: Routes = [
     ], canActivate: [GuardService]
   },
   { path: 'medico', component: MedicoComponent, canActivate: [GuardService] },
-
+  {
+    path: 'medico-rm', component: MedicoRmComponent, canActivate: [GuardService]
+  },
+  {
+    path: 'especialidad-rm', component: EspecialidadRmComponent, canActivate: [GuardService]
+  },
+  {
+    path: 'examen-rm', component: ExamenRmComponent, canActivate: [GuardService]
+  },
   {
     path: 'recuperar', component: RecuperarComponent, children: [
       { path: ':token', component: TokenComponent }
