@@ -38,6 +38,9 @@ public class DetalleConsulta {
 	@Column(name = "tratamiento", nullable = false, length = 300)
 	private String tratamiento;
 
+	@Column(name = "deleted", nullable = true, columnDefinition = "boolean default false")
+	private Boolean deleted = false;
+
 	public Integer getIdDetalle() {
 		return idDetalle;
 	}
