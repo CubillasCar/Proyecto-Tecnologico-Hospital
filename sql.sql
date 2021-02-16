@@ -51,12 +51,11 @@ INSERT INTO menu_rol (id_menu, id_rol) VALUES (6, 1);
 INSERT INTO menu_rol (id_menu, id_rol) VALUES (7, 1);
 INSERT INTO menu_rol (id_menu, id_rol) VALUES (8, 1);
 INSERT INTO menu_rol (id_menu, id_rol) VALUES (9, 1);
-INSERT INTO menu_rol (id_menu, id_rol) VALUES (3, 2);
-INSERT INTO menu_rol (id_menu, id_rol) VALUES (4, 2);
-INSERT INTO menu_rol (id_menu, id_rol) VALUES (5, 2);
-INSERT INTO menu_rol (id_menu, id_rol) VALUES (6, 2);
-
-
+--INSERT INTO menu_rol (id_menu, id_rol) VALUES (3, 2);
+--INSERT INTO menu_rol (id_menu, id_rol) VALUES (4, 2);
+--INSERT INTO menu_rol (id_menu, id_rol) VALUES (5, 2);
+--INSERT INTO menu_rol (id_menu, id_rol) VALUES (6, 2);
+	
 CREATE OR REPLACE FUNCTION fn_listarResumen () 
  RETURNS TABLE (
  cantidad INT,
@@ -77,5 +76,16 @@ FOR var_r IN(
  END LOOP;
 END; $$ 
 LANGUAGE 'plpgsql';
+
+--RECEPTIONISTA MENU
+INSERT INTO menu(id_menu, nombre, icono, url) VALUES (10, 'Medicos.RM', 'healing', '/medico-rm');
+INSERT INTO menu(id_menu, nombre, icono, url) VALUES (11, 'Especialidad.RM', 'star_rate', '/especialidad-rm');
+INSERT INTO menu(id_menu, nombre, icono, url) VALUES (12, 'Examen.RM', 'assignment', '/examen-rm');
+
+--RECEPTIONISTA MENU_ROL
+INSERT INTO menu_rol (id_menu, id_rol) VALUES (8, 2);
+INSERT INTO menu_rol (id_menu, id_rol) VALUES (10, 2);
+INSERT INTO menu_rol (id_menu, id_rol) VALUES (11, 2);
+INSERT INTO menu_rol (id_menu, id_rol) VALUES (12, 2);
 
 

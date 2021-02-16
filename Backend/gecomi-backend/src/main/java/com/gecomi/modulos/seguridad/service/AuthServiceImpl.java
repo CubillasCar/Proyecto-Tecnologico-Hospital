@@ -15,7 +15,7 @@ public class AuthServiceImpl {
 		
 		switch (path) {
 		case "listar":
-				metodoRol = "ADMIN";
+				metodoRol = "ADMIN,USER";
 			break;
 
 		case "listarId":
