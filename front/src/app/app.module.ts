@@ -47,6 +47,9 @@ import { ReporteComponent } from './pages/reporte/reporte.component';
 // buscar
 import { BuscarComponent } from './pages/buscar/buscar.component';
 import { BuscarDialogoComponent } from './pages/buscar/buscar-dialogo/buscar-dialogo.component';
+import { EspecialidadRmComponent } from './pages/especialidad-rm/especialidad-rm.component';
+import { ExamenRmComponent } from './pages/examen-rm/examen-rm.component';
+import { MedicoRmComponent } from './pages/medico-rm/medico-rm.component';
 
 export function tokenGetter() {
   return sessionStorage.getItem(environment.TOKEN_NAME);
@@ -73,7 +76,10 @@ export function tokenGetter() {
     Not403Component,
     Not404Component,
     RecuperarComponent,
-    TokenComponent
+    TokenComponent,
+    EspecialidadRmComponent,
+    ExamenRmComponent,
+    MedicoRmComponent
   ],
   imports: [
     BrowserModule,
