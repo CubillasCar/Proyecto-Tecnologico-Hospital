@@ -1,5 +1,9 @@
 package com.gecomi.modulos.examen.model;
 
+import org.hibernate.annotations.SQLDelete;
+import org.hibernate.annotations.Where;
+import org.hibernate.envers.Audited;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -9,6 +13,9 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "examen")
+@Where(clause = "deleted = false")
+@SQLDelete(sql="update examen set deleted=true where id_examen = ?")
+@Audited
 public class Examen {
 
 	@Id
@@ -20,6 +27,11 @@ public class Examen {
 
 	@Column(name = "descripcion", nullable = true, length = 150)
 	private String descripcion;
+
+	@Column(name = "deleted", nullable = true, columnDefinition = "boolean default false")
+	private Boolean deleted = false;
+
+
 
 	public Integer getIdExamen() {
 		return idExamen;
@@ -70,5 +82,12 @@ public class Examen {
 		return true;
 	}
 
-	
+
+	public Boolean getDeleted() {
+		return deleted;
+	}
+
+	public void setDeleted(Boolean deleted) {
+		this.deleted = deleted;
+	}
 }

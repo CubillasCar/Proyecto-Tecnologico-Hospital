@@ -11,19 +11,27 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 import io.swagger.v3.oas.annotations.media.Schema;
+import org.hibernate.annotations.SQLDelete;
+import org.hibernate.annotations.Where;
+import org.hibernate.envers.Audited;
 
 @Schema(description = "Información del paciente")
 @Entity
 @Table(name = "paciente")
+@Where(clause = "deleted = false")
+@SQLDelete(sql="update paciente set deleted=true where id_paciente = ?")
+@Audited
 public class Paciente {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer idPaciente;	
+	private Integer idPaciente;
+
+	@Column(name = "deleted", nullable = true, columnDefinition = "boolean default false")
+	private Boolean deleted = false;
 	
 	@Schema(description = "nombres del paciente")
 	@Size(min = 3, message = "{nombres.size}")
-	
 	@Column(name = "nombres", nullable = false, length = 70)
 	private String nombres;
 	
@@ -102,7 +110,14 @@ public class Paciente {
 
 	public void setEmail(String email) {
 		this.email = email;
-	}	
-	
-	
+	}
+
+
+	public Boolean getDeleted() {
+		return deleted;
+	}
+
+	public void setDeleted(Boolean deleted) {
+		this.deleted = deleted;
+	}
 }

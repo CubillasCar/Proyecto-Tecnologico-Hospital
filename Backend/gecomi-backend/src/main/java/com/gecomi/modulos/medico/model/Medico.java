@@ -1,5 +1,9 @@
 package com.gecomi.modulos.medico.model;
 
+import org.hibernate.annotations.SQLDelete;
+import org.hibernate.annotations.Where;
+import org.hibernate.envers.Audited;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -9,6 +13,9 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "medico")
+@Where(clause = "deleted = false")
+@SQLDelete(sql="update medico set deleted=true where id_medico = ?")
+@Audited
 public class Medico {
 
 	@Id
@@ -26,6 +33,9 @@ public class Medico {
 
 	@Column(name = "foto_url", nullable = true)
 	private String fotoUrl;
+
+	@Column(name = "deleted", nullable = true, columnDefinition = "boolean default false")
+	private Boolean deleted = false;
 
 	public Integer getIdMedico() {
 		return idMedico;
@@ -67,4 +77,11 @@ public class Medico {
 		this.fotoUrl = fotoUrl;
 	}
 
+	public Boolean getDeleted() {
+		return deleted;
+	}
+
+	public void setDeleted(Boolean deleted) {
+		this.deleted = deleted;
+	}
 }

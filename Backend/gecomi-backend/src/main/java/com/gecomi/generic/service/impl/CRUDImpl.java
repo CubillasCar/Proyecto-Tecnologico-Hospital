@@ -4,6 +4,8 @@ import java.util.List;
 
 import com.gecomi.generic.repo.IGenericRepo;
 import com.gecomi.generic.service.ICRUD;
+import org.springframework.data.jpa.repository.Modifying;
+import org.springframework.data.jpa.repository.Query;
 
 public abstract class CRUDImpl<T, ID> implements ICRUD<T, ID>{
 	

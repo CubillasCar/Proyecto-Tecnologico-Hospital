@@ -1,14 +1,16 @@
 package com.gecomi.modulos.archivos.model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import org.hibernate.annotations.SQLDelete;
+import org.hibernate.annotations.Where;
+import org.hibernate.envers.Audited;
+
+import javax.persistence.*;
 
 @Entity
 @Table(name = "archivo")
+@Where(clause = "deleted = false")
+@SQLDelete(sql="update archivo set deleted=true where id_archivo = ?")
+@Audited
 public class Archivo {
 
 	@Id
@@ -23,6 +25,9 @@ public class Archivo {
 
 	@Column(name = "contenido")
 	private byte[] value;
+
+	@Column(name = "deleted", nullable = true, columnDefinition = "boolean default false")
+	private Boolean deleted = false;
 
 	public Integer getIdArchivo() {
 		return idArchivo;
@@ -56,4 +61,11 @@ public class Archivo {
 		this.value = value;
 	}
 
+	public Boolean getDeleted() {
+		return deleted;
+	}
+
+	public void setDeleted(Boolean deleted) {
+		this.deleted = deleted;
+	}
 }

@@ -1,5 +1,9 @@
 package com.gecomi.modulos.especialidad.model;
 
+import org.hibernate.annotations.SQLDelete;
+import org.hibernate.annotations.Where;
+import org.hibernate.envers.Audited;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -9,6 +13,9 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "especialidad")
+@Where(clause = "deleted = false")
+@SQLDelete(sql="update especialidad set deleted=true where id_especialidad = ?")
+@Audited
 public class Especialidad {
 
 	@Id
@@ -20,6 +27,9 @@ public class Especialidad {
 
 	@Column(name = "descripcion", nullable = true, length = 50)
 	private String descripcion;
+
+	@Column(name = "deleted", nullable = true, columnDefinition = "boolean default false")
+	private Boolean deleted = false;
 
 	public Integer getIdEspecialidad() {
 		return idEspecialidad;
@@ -45,4 +55,11 @@ public class Especialidad {
 		this.descripcion = descripcion;
 	}
 
+	public Boolean getDeleted() {
+		return deleted;
+	}
+
+	public void setDeleted(Boolean deleted) {
+		this.deleted = deleted;
+	}
 }

@@ -3,6 +3,9 @@ package com.gecomi.modulos.consulta.model;
 import com.gecomi.modulos.especialidad.model.Especialidad;
 import com.gecomi.modulos.medico.model.Medico;
 import com.gecomi.modulos.paciente.model.Paciente;
+import org.hibernate.annotations.SQLDelete;
+import org.hibernate.annotations.Where;
+import org.hibernate.envers.Audited;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -21,6 +24,9 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "consulta")
+@Where(clause = "deleted = false")
+@SQLDelete(sql="update consulta set deleted=true where id_consulta = ?")
+@Audited
 public class Consulta {
 
 	@Id
@@ -44,6 +50,9 @@ public class Consulta {
 
 	@Column(name = "fecha", nullable = false)
 	private LocalDateTime fecha;
+
+	@Column(name = "deleted", nullable = true, columnDefinition = "boolean default false")
+	private Boolean deleted = false;
 	
 	//private boolean isDeleted;
 
@@ -131,8 +140,15 @@ public class Consulta {
 			return false;
 		return true;
 	}
-	
-	
+
+	public Boolean getDeleted() {
+		return deleted;
+	}
+
+	public void setDeleted(Boolean deleted) {
+		this.deleted = deleted;
+	}
+
 
 	// SQL
 	// SELECT c.* FROM Consulta c INNER JOIN Paciente p ON c.idPaciente =
