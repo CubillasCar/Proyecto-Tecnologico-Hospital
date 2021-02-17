@@ -35,7 +35,7 @@ public class DetalleConsulta {
 	@Column(name = "diagnostico", nullable = true, length = 70)
 	private String diagnostico;
 
-	@Column(name = "tratamient	o", nullable = true, length = 300)
+	@Column(name = "tratamiento", nullable = true, length = 300)
 	private String tratamiento;
 
 	public Integer getIdDetalle() {
