@@ -81,11 +81,13 @@ LANGUAGE 'plpgsql';
 INSERT INTO menu(id_menu, nombre, icono, url) VALUES (10, 'Medicos.RM', 'healing', '/medico-rm');
 INSERT INTO menu(id_menu, nombre, icono, url) VALUES (11, 'Especialidad.RM', 'star_rate', '/especialidad-rm');
 INSERT INTO menu(id_menu, nombre, icono, url) VALUES (12, 'Examen.RM', 'assignment', '/examen-rm');
+INSERT INTO menu(id_menu, nombre, icono, url) VALUES (13, 'Registrar.R', 'insert_drive_file', '/consulta-r');
 
 --RECEPTIONISTA MENU_ROL
 INSERT INTO menu_rol (id_menu, id_rol) VALUES (8, 2);
 INSERT INTO menu_rol (id_menu, id_rol) VALUES (10, 2);
 INSERT INTO menu_rol (id_menu, id_rol) VALUES (11, 2);
 INSERT INTO menu_rol (id_menu, id_rol) VALUES (12, 2);
+INSERT INTO menu_rol (id_menu, id_rol) VALUES (13, 2);
 
 
