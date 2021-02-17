@@ -1,4 +1,3 @@
-import { ConsultaMComponent } from './pages/consulta-m/consulta-m.component';
 import { ConsultaRComponent } from './pages/consulta-r/consulta-r.component';
 import { ExamenRmComponent } from './pages/examen-rm/examen-rm.component';
 import { EspecialidadRmComponent } from './pages/especialidad-rm/especialidad-rm.component';
