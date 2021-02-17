@@ -1,3 +1,5 @@
+import { ConsultaMComponent } from './pages/consulta-m/consulta-m.component';
+import { ConsultaRComponent } from './pages/consulta-r/consulta-r.component';
 import { ExamenRmComponent } from './pages/examen-rm/examen-rm.component';
 import { EspecialidadRmComponent } from './pages/especialidad-rm/especialidad-rm.component';
 import { MedicoRmComponent } from './pages/medico-rm/medico-rm.component';
@@ -59,7 +61,7 @@ const routes: Routes = [
       { path: ':token', component: TokenComponent }
     ]
   },
-
+  { path: 'consulta-r', component: ConsultaRComponent, canActivate: [GuardService] },
   { path: 'buscar', component: BuscarComponent, canActivate: [GuardService] },
   { path: 'reporte', component: ReporteComponent, canActivate: [GuardService] },
   { path: 'consulta', component: ConsultaComponent, canActivate: [GuardService] },

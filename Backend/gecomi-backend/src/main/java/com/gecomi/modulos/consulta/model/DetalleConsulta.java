@@ -32,10 +32,10 @@ public class DetalleConsulta {
 	@JoinColumn(name = "id_consulta", nullable = false, foreignKey = @ForeignKey(name = "FK_consulta_detalle"))
 	private Consulta consulta;
 
-	@Column(name = "diagnostico", nullable = false, length = 70)
+	@Column(name = "diagnostico", nullable = true, length = 70)
 	private String diagnostico;
 
-	@Column(name = "tratamiento", nullable = false, length = 300)
+	@Column(name = "tratamient	o", nullable = true, length = 300)
 	private String tratamiento;
 
 	public Integer getIdDetalle() {

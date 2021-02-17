@@ -50,6 +50,7 @@ import { BuscarDialogoComponent } from './pages/buscar/buscar-dialogo/buscar-dia
 import { EspecialidadRmComponent } from './pages/especialidad-rm/especialidad-rm.component';
 import { ExamenRmComponent } from './pages/examen-rm/examen-rm.component';
 import { MedicoRmComponent } from './pages/medico-rm/medico-rm.component';
+import { ConsultaRComponent } from './pages/consulta-r/consulta-r.component';
 
 export function tokenGetter() {
   return sessionStorage.getItem(environment.TOKEN_NAME);
@@ -79,7 +80,8 @@ export function tokenGetter() {
     TokenComponent,
     EspecialidadRmComponent,
     ExamenRmComponent,
-    MedicoRmComponent
+    MedicoRmComponent,
+    ConsultaRComponent
   ],
   imports: [
     BrowserModule,

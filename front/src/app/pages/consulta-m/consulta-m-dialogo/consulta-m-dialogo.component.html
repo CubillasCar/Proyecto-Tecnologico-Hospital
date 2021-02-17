@@ -1,0 +1,26 @@
+<div>
+  <mat-form-field>
+      <input matInput placeholder="paciente" [(ngModel)]="consulta.paciente.nombres">
+  </mat-form-field>
+  <mat-form-field>
+      <input matInput placeholder="medico" [(ngModel)]="consulta.medico.nombres">
+  </mat-form-field>
+  <mat-form-field>
+      <input matInput placeholder="especialidad" [(ngModel)]="consulta.especialidad.nombre">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="numConsultorio" [(ngModel)]="consulta.numConsultorio">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="fecha" [(ngModel)]="consulta.fecha">
+  </mat-form-field>
+
+<!--
+  <mat-form-field>
+      <input matInput placeholder="foto" [(ngModel)]="medico.fotoUrl">
+  </mat-form-field>
+  <img mat-card-image [src]="medico.fotoUrl" alt="" width="50%" height="50%" *ngIf="medico.fotoUrl != null">
+-->
+</div>
+<button mat-raised-button color="primary" (click)="operar()">Aceptar</button>
+<button mat-raised-button color="accent" (click)="cerrar()">Cancelar</button>
