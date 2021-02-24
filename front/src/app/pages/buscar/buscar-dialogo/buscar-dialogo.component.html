@@ -24,4 +24,86 @@
     </mat-card-content>
 </mat-card>
 
+
+
+
+
+
+
+
+
+
+
+
+
+<mat-form-field>
+  <input matInput placeholder="Diagnostico" [(ngModel)]="diagnostico" formControlName="diagnostico">
+</mat-form-field>
+<mat-form-field>
+  <input matInput placeholder="Tratamiento" [(ngModel)]="tratamiento" formControlName="tratamiento">
+</mat-form-field>
+
+<button mat-raised-button color="primary" type="button" (click)="agregar()">
+  <mat-icon>add</mat-icon>
+</button>
+
+<mat-accordion>
+  <mat-expansion-panel *ngFor="let d of detalleConsulta; let i=index">
+      <mat-expansion-panel-header>
+          <mat-panel-title>
+              {{d.diagnostico}}
+          </mat-panel-title>
+          <mat-panel-description>
+              Ver Tratamiento
+          </mat-panel-description>
+      </mat-expansion-panel-header>
+
+      <mat-form-field>
+          <textarea matInput placeholder="Tratamiento" value="{{d.tratamiento}}"></textarea>
+      </mat-form-field>
+      <br>
+      <button mat-raised-button color="warn" type="button" (click)="removerDiagnostico(i)">
+          <mat-icon>delete</mat-icon>
+      </button>
+
+  </mat-expansion-panel>
+
+</mat-accordion>
+
+<mat-form-field>
+  <mat-select placeholder="Examen" [(value)]="examenSeleccionado">
+      <mat-option *ngFor="let ex of examenes" [value]="ex">
+          {{ ex.nombre }}
+      </mat-option>
+  </mat-select>
+</mat-form-field>
+
+<button mat-raised-button color="primary" type="button" (click)="agregarExamen()">
+  <mat-icon>add</mat-icon>
+</button>
+
+<mat-toolbar *ngFor="let d of examenesSeleccionados; let i=index">
+  {{d.nombre}}
+  <span class="example-spacer"></span>
+  <button mat-raised-button color="warn" type="button" (click)="removerExamen(i)">
+      <mat-icon>delete</mat-icon>
+  </button>
+</mat-toolbar>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <button mat-raised-button color="accent" (click)="cancelar()" style="float: right">Cerrar</button>

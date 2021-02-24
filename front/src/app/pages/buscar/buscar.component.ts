@@ -19,7 +19,7 @@ export class BuscarComponent implements OnInit {
 
   form: FormGroup;
   maxFecha: Date = new Date();
-  displayedColumns = ['paciente', 'medico', 'especialidad', 'fecha', 'acciones'];
+  displayedColumns = ['paciente', 'medico', 'especialidad', 'fecha'/*, 'acciones'*/];
   dataSource: MatTableDataSource<Consulta>;
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
@@ -47,8 +47,8 @@ export class BuscarComponent implements OnInit {
         fecha: ''
       }
 
-      {       
-        nombreCompleto: xxxxx        
+      {
+        nombreCompleto: xxxxx
       }
     */
 
@@ -67,7 +67,7 @@ export class BuscarComponent implements OnInit {
       }
 
     }
-    
+
     this.consultaService.buscar(filtro).subscribe(data => {
       this.dataSource = new MatTableDataSource(data);
       this.dataSource.paginator = this.paginator;

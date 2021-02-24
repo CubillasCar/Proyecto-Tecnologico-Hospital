@@ -26,13 +26,21 @@
             </mat-form-field>
 
             <mat-form-field>
-                <input matInput [matDatepicker]="picker" placeholder="Escoge una fecha" [max]="maxFecha"
+                <input matInput [matDatepicker]="picker" placeholder="Escoge una fecha" [min]="maxFecha"
                     formControlName="fecha">
                 <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
                 <mat-datepicker #picker></mat-datepicker>
             </mat-form-field>
 
             <br>
+
+
+
+
+
+
+
+
 
             <mat-form-field>
                 <input matInput placeholder="Diagnostico" [(ngModel)]="diagnostico" formControlName="diagnostico">
@@ -88,12 +96,21 @@
                 </button>
             </mat-toolbar>
 
+
+
+
+
+
+
+
+
+
             <div class="container" fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="0.5%">
                 <div class="example-card" *ngFor="let m of medicos">
                     <mat-card>
                         <mat-card-header>
                             <mat-card-title (click)="seleccionarMedico(m)"
-                                [ngClass]="medicoSeleccionado == m ? 'medicoCSS' : ''"> {{m.nombres}} {{ m.apellidos }}                                
+                                [ngClass]="medicoSeleccionado == m ? 'medicoCSS' : ''"> {{m.nombres}} {{ m.apellidos }}
                             </mat-card-title>
                             <mat-card-subtitle>{{m.cmp}}</mat-card-subtitle>
                         </mat-card-header>
@@ -116,7 +133,7 @@
     <mat-step [stepControl]="segundoFormGroup">
         <ng-template matStepLabel>Consultorio</ng-template>
         <form [formGroup]="segundoFormGroup">
-            <h2 id="consultorio">SELECCIONAR CONSULTORIO</h2>                       
+            <h2 id="consultorio">SELECCIONAR CONSULTORIO</h2>
 
             <mat-grid-list cols="10">
                 <mat-grid-tile (click)="seleccionarConsultorio(c)"
